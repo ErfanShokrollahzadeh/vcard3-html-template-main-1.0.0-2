@@ -2365,6 +2365,7 @@ button:focus {
   left: 0;
   width: 100%;
   z-index: 1;
+  font-size: 1rem;
 }
 .progress .progress-text > * {
   min-width: 0;
