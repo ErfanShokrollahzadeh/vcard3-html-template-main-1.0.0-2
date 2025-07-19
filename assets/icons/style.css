@@ -1,26 +1,36 @@
 @font-face {
-  font-family: 'icomoon';
-  src:
-    url('icomoon.woff') format('woff'),
-    url('icomoon.woff2') format('woff2');
+  font-family: "icomoon";
+  src: url("icomoon.woff") format("woff"), url("icomoon.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  font-size: 25px; /* Set a default size */
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Apply cursor pointer to clickable elements containing icons */
+.header__social a,
+a [class^="icon-"],
+a [class*=" icon-"],
+a [class^="bi-"],
+a [class*=" bi-"] {
+  cursor: pointer;
 }
 
 .icon-send:before {
