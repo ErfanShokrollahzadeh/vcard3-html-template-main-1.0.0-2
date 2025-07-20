@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeProgressBar(progressBar) {
     const targetWidth = progressBar.getAttribute("data-width");
     progressBar.style.setProperty("--target-width", targetWidth + "%");
-    
+
     setTimeout(() => {
       progressBar.classList.add("animated");
       animateCounter(progressBar, targetWidth);
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const progressBar = entry.target;
-          
+
           // Only animate if not already animated
           if (!progressBar.classList.contains("animated")) {
             initializeProgressBar(progressBar);
