@@ -78,20 +78,20 @@
         transition: all 0.3s ease;
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
-      
+
       .tech-article:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
       }
-      
+
       .news-item__image-wrap {
         position: relative;
         overflow: hidden;
         border-radius: 15px 15px 0 0;
       }
-      
+
       .tech-icon-overlay {
         position: absolute;
         top: 50%;
@@ -99,7 +99,7 @@
         transform: translate(-50%, -50%);
         z-index: 2;
         opacity: 0.9;
-        background: rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border-radius: 50%;
         width: 80px;
@@ -109,19 +109,19 @@
         justify-content: center;
         transition: all 0.3s ease;
       }
-      
+
       .tech-article:hover .tech-icon-overlay {
         transform: translate(-50%, -50%) scale(1.1);
         opacity: 1;
       }
-      
+
       .tech-tags {
         margin: 10px 0;
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
       }
-      
+
       .tech-tags .tag {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
@@ -131,28 +131,28 @@
         font-weight: 500;
         transition: all 0.3s ease;
       }
-      
+
       .tech-tags .tag:hover {
         transform: scale(1.05);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       }
-      
+
       .news-item__date {
         background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
         border-radius: 10px;
         padding: 8px 12px;
         color: white;
         font-weight: bold;
-        box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
       }
-      
+
       .news-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 30px;
         margin-top: 30px;
       }
-      
+
       .news-item__caption h2 {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         -webkit-background-clip: text;
@@ -160,28 +160,32 @@
         background-clip: text;
         margin-bottom: 15px;
       }
-      
+
       .news-item__caption p {
         line-height: 1.6;
         color: #666;
         font-size: 0.95rem;
       }
-      
+
       .overlay--60::before {
-        background: linear-gradient(45deg, rgba(102, 126, 234, 0.6), rgba(118, 75, 162, 0.6));
+        background: linear-gradient(
+          45deg,
+          rgba(102, 126, 234, 0.6),
+          rgba(118, 75, 162, 0.6)
+        );
       }
-      
+
       @media (max-width: 768px) {
         .news-grid {
           grid-template-columns: 1fr;
           gap: 20px;
         }
-        
+
         .tech-icon-overlay {
           width: 60px;
           height: 60px;
         }
-        
+
         .tech-icon-overlay i {
           font-size: 2rem !important;
         }
@@ -330,8 +334,12 @@
                 <h1 class="title title--h1 first-title title__separate">
                   وبلاگ فنی و توسعه نرم‌افزار
                 </h1>
-                <p class="blog-subtitle" style="color: #666; font-size: 1.1rem; margin-top: 15px;">
-                  مقالات و تجربیات من در زمینه Python، Django، Full-Stack Development و فناوری‌های مدرن
+                <p
+                  class="blog-subtitle"
+                  style="color: #666; font-size: 1.1rem; margin-top: 15px"
+                >
+                  مقالات و تجربیات من در زمینه Python، Django، Full-Stack
+                  Development و فناوری‌های مدرن
                 </p>
               </div>
 
@@ -343,7 +351,10 @@
                     <div class="news-item__date">15<span>دی</span></div>
                     <a class="news-item__link" href="single-post.html"></a>
                     <div class="tech-icon-overlay">
-                      <i class="fab fa-python" style="font-size: 3rem; color: #3776ab;"></i>
+                      <i
+                        class="fab fa-python"
+                        style="font-size: 3rem; color: #3776ab"
+                      ></i>
                     </div>
                     <img
                       class="cover lazyload"
@@ -352,15 +363,18 @@
                     />
                   </div>
                   <div class="news-item__caption">
-                    <h2 class="title title--h4">توسعه API با Django REST Framework</h2>
+                    <h2 class="title title--h4">
+                      توسعه API با Django REST Framework
+                    </h2>
                     <div class="tech-tags">
                       <span class="tag">Python</span>
                       <span class="tag">Django</span>
                       <span class="tag">REST API</span>
                     </div>
                     <p>
-                      چگونه با استفاده از Django REST Framework یک API قدرتمند و مقیاس‌پذیر بسازیم. 
-                      از مفاهیم پایه تا پیاده‌سازی احراز هویت و مجوزها.
+                      چگونه با استفاده از Django REST Framework یک API قدرتمند و
+                      مقیاس‌پذیر بسازیم. از مفاهیم پایه تا پیاده‌سازی احراز هویت
+                      و مجوزها.
                     </p>
                   </div>
                 </article>
@@ -371,7 +385,10 @@
                     <div class="news-item__date">12<span>دی</span></div>
                     <a class="news-item__link" href="single-post.html"></a>
                     <div class="tech-icon-overlay">
-                      <i class="fab fa-js-square" style="font-size: 3rem; color: #f7df1e;"></i>
+                      <i
+                        class="fab fa-js-square"
+                        style="font-size: 3rem; color: #f7df1e"
+                      ></i>
                     </div>
                     <img
                       class="cover lazyload"
@@ -380,15 +397,17 @@
                     />
                   </div>
                   <div class="news-item__caption">
-                    <h2 class="title title--h4">Full-Stack Development با Python و React</h2>
+                    <h2 class="title title--h4">
+                      Full-Stack Development با Python و React
+                    </h2>
                     <div class="tech-tags">
                       <span class="tag">React</span>
                       <span class="tag">JavaScript</span>
                       <span class="tag">Frontend</span>
                     </div>
                     <p>
-                      نحوه اتصال بک‌اند Django به فرانت‌اند React و ایجاد یک اپلیکیشن کامل 
-                      با بهترین روش‌های توسعه مدرن.
+                      نحوه اتصال بک‌اند Django به فرانت‌اند React و ایجاد یک
+                      اپلیکیشن کامل با بهترین روش‌های توسعه مدرن.
                     </p>
                   </div>
                 </article>
@@ -399,7 +418,10 @@
                     <div class="news-item__date">10<span>دی</span></div>
                     <a class="news-item__link" href="single-post.html"></a>
                     <div class="tech-icon-overlay">
-                      <i class="fas fa-database" style="font-size: 3rem; color: #336791;"></i>
+                      <i
+                        class="fas fa-database"
+                        style="font-size: 3rem; color: #336791"
+                      ></i>
                     </div>
                     <img
                       class="cover lazyload"
@@ -408,15 +430,17 @@
                     />
                   </div>
                   <div class="news-item__caption">
-                    <h2 class="title title--h4">بهینه‌سازی پایگاه داده در Django</h2>
+                    <h2 class="title title--h4">
+                      بهینه‌سازی پایگاه داده در Django
+                    </h2>
                     <div class="tech-tags">
                       <span class="tag">PostgreSQL</span>
                       <span class="tag">Database</span>
                       <span class="tag">Performance</span>
                     </div>
                     <p>
-                      تکنیک‌های پیشرفته برای بهینه‌سازی کوئری‌ها، استفاده از ایندکس‌ها 
-                      و بهبود عملکرد پایگاه داده در پروژه‌های Django.
+                      تکنیک‌های پیشرفته برای بهینه‌سازی کوئری‌ها، استفاده از
+                      ایندکس‌ها و بهبود عملکرد پایگاه داده در پروژه‌های Django.
                     </p>
                   </div>
                 </article>
@@ -427,7 +451,10 @@
                     <div class="news-item__date">8<span>دی</span></div>
                     <a class="news-item__link" href="single-post.html"></a>
                     <div class="tech-icon-overlay">
-                      <i class="fas fa-cloud" style="font-size: 3rem; color: #ff9900;"></i>
+                      <i
+                        class="fas fa-cloud"
+                        style="font-size: 3rem; color: #ff9900"
+                      ></i>
                     </div>
                     <img
                       class="cover lazyload"
@@ -436,15 +463,18 @@
                     />
                   </div>
                   <div class="news-item__caption">
-                    <h2 class="title title--h4">Deploy کردن Django Apps در AWS</h2>
+                    <h2 class="title title--h4">
+                      Deploy کردن Django Apps در AWS
+                    </h2>
                     <div class="tech-tags">
                       <span class="tag">AWS</span>
                       <span class="tag">Docker</span>
                       <span class="tag">DevOps</span>
                     </div>
                     <p>
-                      راهنمای کامل برای استقرار اپلیکیشن‌های Django در AWS با استفاده از 
-                      Docker، EC2 و RDS برای حداکثر کارایی و قابلیت اطمینان.
+                      راهنمای کامل برای استقرار اپلیکیشن‌های Django در AWS با
+                      استفاده از Docker، EC2 و RDS برای حداکثر کارایی و قابلیت
+                      اطمینان.
                     </p>
                   </div>
                 </article>
@@ -455,7 +485,10 @@
                     <div class="news-item__date">5<span>دی</span></div>
                     <a class="news-item__link" href="single-post.html"></a>
                     <div class="tech-icon-overlay">
-                      <i class="fas fa-robot" style="font-size: 3rem; color: #ff6b6b;"></i>
+                      <i
+                        class="fas fa-robot"
+                        style="font-size: 3rem; color: #ff6b6b"
+                      ></i>
                     </div>
                     <img
                       class="cover lazyload"
@@ -464,14 +497,16 @@
                     />
                   </div>
                   <div class="news-item__caption">
-                    <h2 class="title title--h4">Machine Learning با Python و TensorFlow</h2>
+                    <h2 class="title title--h4">
+                      Machine Learning با Python و TensorFlow
+                    </h2>
                     <div class="tech-tags">
                       <span class="tag">TensorFlow</span>
                       <span class="tag">ML</span>
                       <span class="tag">AI</span>
                     </div>
                     <p>
-                      شروع کار با یادگیری ماشین در Python، از آماده‌سازی داده تا 
+                      شروع کار با یادگیری ماشین در Python، از آماده‌سازی داده تا
                       آموزش مدل‌های عمیق با TensorFlow و Keras.
                     </p>
                   </div>
@@ -483,7 +518,10 @@
                     <div class="news-item__date">2<span>دی</span></div>
                     <a class="news-item__link" href="single-post.html"></a>
                     <div class="tech-icon-overlay">
-                      <i class="fas fa-mobile-alt" style="font-size: 3rem; color: #61dafb;"></i>
+                      <i
+                        class="fas fa-mobile-alt"
+                        style="font-size: 3rem; color: #61dafb"
+                      ></i>
                     </div>
                     <img
                       class="cover lazyload"
@@ -492,14 +530,16 @@
                     />
                   </div>
                   <div class="news-item__caption">
-                    <h2 class="title title--h4">طراحی Responsive با CSS Grid و Flexbox</h2>
+                    <h2 class="title title--h4">
+                      طراحی Responsive با CSS Grid و Flexbox
+                    </h2>
                     <div class="tech-tags">
                       <span class="tag">CSS</span>
                       <span class="tag">Responsive</span>
                       <span class="tag">UI/UX</span>
                     </div>
                     <p>
-                      تکنیک‌های مدرن CSS برای ایجاد رابط‌های کاربری واکنش‌گرا و 
+                      تکنیک‌های مدرن CSS برای ایجاد رابط‌های کاربری واکنش‌گرا و
                       زیبا که در تمام دستگاه‌ها عملکرد مناسبی داشته باشند.
                     </p>
                   </div>
