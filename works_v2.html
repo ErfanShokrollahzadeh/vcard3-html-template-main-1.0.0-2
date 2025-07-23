@@ -2,7 +2,7 @@
 <html lang="fa">
   <head>
     <meta charset="utf-8" />
-    <title>قالب شخصی VCard3 - نمونه کار های 2</title>
+    <title>عرفان شکرالله زاده - نمونه کارها</title>
 
     <!-- Meta Data -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,8 +12,11 @@
     />
     <meta name="format-detection" content="telephone=no" />
     <meta name="format-detection" content="address=no" />
-    <meta name="author" content="Melika Khaliliyan" />
-    <meta name="description" content="vCard" />
+    <meta name="author" content="عرفان شکرالله زاده" />
+    <meta
+      name="description"
+      content="Full-Stack Python Developer Portfolio - Django Projects"
+    />
 
     <!-- Twitter data -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,27 +37,27 @@
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="assets/images/favicons/apple-touch-icon-144x144.png"
+      href="assets/images/favicons/favicon.ico"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="assets/images/favicons/apple-touch-icon-114x114.png"
+      href="assets/images/favicons/favicon.ico"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="assets/images/favicons/apple-touch-icon-72x72.png"
+      href="assets/images/favicons/favicon.ico"
     />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="assets/images/favicons/apple-touch-icon-57x57.png"
+      href="assets/images/favicons/favicon.ico"
     />
     <link
       rel="shortcut icon"
-      href="assets/images/favicons/favicon.png"
-      type="image/png"
+      href="assets/images/favicons/favicon.ico"
+      type="image/x-icon"
     />
 
     <!-- Styles -->
@@ -65,6 +68,247 @@
     />
     <link rel="stylesheet" type="text/css" href="assets/styles/style-rtl.css" />
     <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Modern Portfolio Styles */
+      .portfolio-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        text-align: center;
+      }
+
+      .portfolio-hero h1 {
+        color: white !important;
+        margin-bottom: 1rem;
+      }
+
+      .portfolio-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: block;
+      }
+
+      .modern-filter {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 2rem 0;
+        border: 1px solid #e0e6ed;
+      }
+
+      .filter-title {
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .filter-btn {
+        background: #f8f9ff;
+        color: #667eea;
+        border: 2px solid #e0e6ed;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e6ed;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .project-image {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          #f093fb 0%,
+          #f5576c 50%,
+          #4facfe 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(102, 126, 234, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .overlay-content {
+        text-align: center;
+        color: white;
+      }
+
+      .overlay-content i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-info {
+        padding: 1.5rem;
+      }
+
+      .project-title {
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .project-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tech-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: #764ba2;
+        transform: translateX(5px);
+      }
+
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .filter-buttons {
+          justify-content: center;
+        }
+
+        .portfolio-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Preloader -->
@@ -94,27 +338,59 @@
             <div class="header__photo">
               <img
                 class="header__photo-img"
-                src="assets/img/main-photo.svg"
-                alt="Ronald Robertson"
+                src="assets/img/avator3.JPG"
+                alt="عرفان شکرالله زاده"
               />
             </div>
             <div class="header__base-info">
-              <h4 class="title titl--h4">ملیکا خلیلیان</h4>
-              <div class="status">کارگردان خلاق</div>
+              <h4 class="title titl--h4">عرفان شکرالله زاده</h4>
+              <div class="status">Full-Stack Software Developer (Python)</div>
               <ul class="header__social">
                 <li>
-                  <a href="https://www.facebook.com/"
-                    ><i class="font-icon icon-facebook1"></i
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100082935861062"
+                    ><i class="font-icon icon-facebook1" style="color: blue"></i
                   ></a>
                 </li>
                 <li>
-                  <a href="https://www.twitter.com/"
-                    ><i class="font-icon icon-twitter1"></i
+                  <a href="https://twitter.com/erfan_shokr"
+                    ><i class="font-icon icon-twitter1" style="color: black"></i
                   ></a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/"
-                    ><i class="font-icon icon-instagram1"></i
+                  <a href="https://www.instagram.com/erfan_shokrollahzadeh"
+                    ><i class="font-icon icon-instagram1" style="color: red"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/erfan-shokrollahzadeh-babb95216/"
+                    ><i
+                      class="font-icon icon-linkedin1"
+                      style="color: #0077b5"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://t.me/ERFANsorena80"
+                    ><i
+                      class="bi bi-telegram"
+                      style="color: #0088cc; font-size: 1.2em"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/ErfanShokrollahzadeh"
+                    ><i class="font-icon icon-github" style="color: #24292e"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://stackoverflow.com/users/18267139/erfan-shokrollahzadeh?tab=profile"
+                    ><i
+                      class="bi bi-stack-overflow"
+                      style="color: #f48024; font-size: 20px"
+                    ></i
                   ></a>
                 </li>
               </ul>
@@ -123,13 +399,15 @@
           <div class="header__right">
             <ul class="header__contact">
               <li>
-                <span class="overhead">ایمیل</span>Melika.khaliliyan@gmail.com
+                <span class="overhead">ایمیل</span>erfan.shokr300@gmail.com
               </li>
-              <li><span class="overhead">تلفن</span>09105552211</li>
+              <li><span class="overhead">تلفن</span>9334920731 (۹۸+) 🇮🇷</li>
+              <li><span class="overhead">تلفن</span>4243 246 505 (90+) 🇹🇷</li>
+              <li><span class="overhead">تلفن</span>99935703 (374+) 🇦🇲</li>
             </ul>
             <ul class="header__contact">
-              <li><span class="overhead">تولد</span>9 بهمن 1375</li>
-              <li><span class="overhead">مکان تولد</span>شاهرود ایران</li>
+              <li><span class="overhead">تولد</span>28 شهریور 1380</li>
+              <li><span class="overhead">مکان تولد</span>تهران، ایران</li>
             </ul>
           </div>
         </header>
@@ -170,7 +448,7 @@
             <div class="box box-content">
               <div class="pb-2">
                 <h1 class="title title--h1 first-title title__separate">
-                  نمونه کار
+                  نمونه کار (coming soon)
                 </h1>
               </div>
 
@@ -187,9 +465,6 @@
                   </li>
                   <li class="filter__item" data-filter=".category-design">
                     <a class="filter__link" href="#filter">طراحی</a>
-                  </li>
-                  <li class="filter__item" data-filter=".category-life">
-                    <a class="filter__link" href="#filter">زندگی</a>
                   </li>
                 </ul>
                 <input type="hidden" name="changemetoo" />
