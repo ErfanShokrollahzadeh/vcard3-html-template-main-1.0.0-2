@@ -6,7 +6,7 @@
   --warning-color: #ff9800;
   --info-color: #2196f3;
   --danger-color: #f44336;
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #35ae11 100%);
   --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
@@ -19,6 +19,16 @@
 .modern-progress {
   margin-bottom: 2rem;
   position: relative;
+  direction: ltr; /* Ensure consistent direction for progress bars */
+}
+
+/* RTL Support */
+[dir="rtl"] .modern-progress {
+  direction: ltr; /* Keep progress bars LTR even in RTL layouts */
+}
+
+[dir="rtl"] .modern-progress-label {
+  direction: rtl; /* But keep labels RTL */
 }
 
 .modern-progress-label {
@@ -27,8 +37,8 @@
   align-items: center;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  font-size: 0.95rem;
-  color: #2c3e50;
+  font-size: 1rem;
+  color: white;
 }
 
 .modern-progress-label .skill-name {
@@ -73,9 +83,15 @@
   height: 100%;
   border-radius: 25px;
   position: relative;
-  transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+  transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--gradient-1);
   box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Ensure animation starts from 0 */
+.modern-progress-fill:not(.animated) {
+  width: 0% !important;
 }
 
 /* Animated Shine Effect */
