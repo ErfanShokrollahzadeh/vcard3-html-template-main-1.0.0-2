@@ -112,11 +112,45 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.modern-form .btn:hover {
+.modern-form .btn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.modern-form .btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.modern-form .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.modern-form .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.modern-form .btn:hover:not(:disabled)::before {
+  left: 100%;
 }
 
 .tech-skills {
@@ -165,21 +199,35 @@
   margin: 2rem 0;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.map-container:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
 }
 
 .map-overlay {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   padding: 1rem;
   border-radius: 10px;
   z-index: 10;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.map-overlay:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.02);
 }
 
 .map-overlay h4 {
   margin: 0 0 0.5rem 0;
+  color: #667eea;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -190,9 +238,99 @@
   opacity: 0.9;
 }
 
-#map {
+.map-controls button {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-controls button:hover {
+  background: rgba(102, 126, 234, 0.8);
+  transform: scale(1.1);
+}
+
+.map-actions a {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.map-actions a:hover {
+  background: rgba(102, 126, 234, 0.8);
+  transform: scale(1.05);
+  text-decoration: none;
+  color: white;
+}
+
+.custom-marker {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+/* Interactive map styles */
+.interactive-map {
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+#fallback-map {
+  border: 0;
+  border-radius: 15px;
+  filter: sepia(20%) hue-rotate(220deg) saturate(1.2);
+  transition: filter 0.3s ease;
+}
+
+#fallback-map:hover {
+  filter: sepia(10%) hue-rotate(220deg) saturate(1.4);
+}
+
+/* Map loading animation */
+#map-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: #667eea;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+#map-loading i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
 }
 
 /* Responsive adjustments */
@@ -237,4 +375,79 @@
   .map-container {
     height: 300px;
   }
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  font-weight: 500;
+  max-width: 350px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.notification-success {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+}
+
+.notification-error {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: white;
+}
+
+/* Form validation styles */
+.form-control.error {
+  border-color: #f44336 !important;
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+}
+
+.form-control.success {
+  border-color: #4caf50 !important;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1) !important;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.btn-ripple:active::after {
+  width: 200px;
+  height: 200px;
 }

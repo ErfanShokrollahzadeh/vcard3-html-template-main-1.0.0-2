@@ -334,6 +334,12 @@
                         <h5 style="margin: 0 0 0.5rem 0">تلفن ترکیه</h5>
                         <span>4243 246 505 (90+) 🇹🇷</span>
                       </div>
+                      <hr />
+                      <br />
+                      <div class="contact-method-info">
+                        <h5 style="margin: 0 0 0.5rem 0">تلفن ارمنستان</h5>
+                        <span>99935703 (374+) 🇦🇲</span>
+                      </div>
                     </div>
 
                     <div
@@ -446,7 +452,8 @@
 
                       <button
                         type="submit"
-                        class="btn"
+                        id="submitBtn"
+                        class="btn btn-submit"
                         style="
                           background: linear-gradient(
                             135deg,
@@ -458,10 +465,17 @@
                           border: none;
                           border-radius: 8px;
                           cursor: pointer;
+                          font-weight: 600;
+                          transition: all 0.3s ease;
+                          display: flex;
+                          align-items: center;
+                          gap: 0.5rem;
+                          width: 100%;
+                          justify-content: center;
                         "
                       >
-                        <i class="fas fa-paper-plane"></i>
-                        ارسال پیام
+                        <i class="fas fa-paper-plane" id="submitIcon"></i>
+                        <span id="submitText">ارسال پیام</span>
                       </button>
                     </form>
                   </div>
@@ -609,6 +623,7 @@
                     margin: 2rem 0;
                     border-radius: 15px;
                     overflow: hidden;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
                   "
                 >
                   <div
@@ -617,23 +632,94 @@
                       position: absolute;
                       top: 20px;
                       right: 20px;
-                      background: rgba(0, 0, 0, 0.8);
+                      background: rgba(0, 0, 0, 0.85);
                       padding: 1rem;
                       border-radius: 10px;
                       z-index: 10;
+                      backdrop-filter: blur(10px);
+                      border: 1px solid rgba(255, 255, 255, 0.1);
                     "
                   >
-                    <h4 style="margin: 0 0 0.5rem 0">
-                      <i class="fas fa-map-marker-alt"></i> موقعیت
+                    <h4 style="margin: 0 0 0.5rem 0; color: #667eea">
+                      <i class="fas fa-map-marker-alt"></i> موقعیت من
                     </h4>
-                    <p style="margin: 0">ترکیه</p>
-                    <p style="margin: 0">دسترسی بین‌المللی</p>
+                    <p style="margin: 0; opacity: 0.9">📍 ترکیه</p>
+                    <p style="margin: 0; opacity: 0.8; font-size: 0.9rem">
+                      🌍 دسترسی بین‌المللی
+                    </p>
+                    <p
+                      style="
+                        margin: 0.5rem 0 0 0;
+                        opacity: 0.7;
+                        font-size: 0.8rem;
+                      "
+                    >
+                      <i class="fas fa-clock"></i> UTC+3
+                    </p>
                   </div>
+
+                  <!-- Simple Google Maps Embed -->
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1570267.9102941896!2d33.5050504!3d39.0742279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2sTurkey!5e0!3m2!1sen!2s!4v1674123456789!5m2!1sen!2s&maptype=roadmap"
+                    width="100%"
+                    height="100%"
+                    style="
+                      border: 0;
+                      border-radius: 15px;
+                      filter: brightness(0.8) contrast(1.2) saturate(0.9);
+                    "
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+
+                  <!-- Alternative Map Links -->
                   <div
-                    class="map"
-                    id="map"
-                    style="width: 100%; height: 100%"
-                  ></div>
+                    class="map-actions"
+                    style="
+                      position: absolute;
+                      bottom: 20px;
+                      left: 20px;
+                      z-index: 10;
+                      display: flex;
+                      gap: 0.5rem;
+                    "
+                  >
+                    <a
+                      href="https://www.google.com/maps/place/Turkey/@39.0742279,33.5050504,6z"
+                      target="_blank"
+                      style="
+                        background: rgba(0, 0, 0, 0.8);
+                        color: white;
+                        text-decoration: none;
+                        padding: 0.5rem;
+                        border-radius: 5px;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: all 0.3s ease;
+                      "
+                      title="مشاهده در Google Maps"
+                    >
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a
+                      href="https://maps.apple.com/?q=Turkey"
+                      target="_blank"
+                      style="
+                        background: rgba(0, 0, 0, 0.8);
+                        color: white;
+                        text-decoration: none;
+                        padding: 0.5rem;
+                        border-radius: 5px;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        transition: all 0.3s ease;
+                      "
+                      title="مشاهده در Apple Maps"
+                    >
+                      <i class="fas fa-map"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -692,5 +778,233 @@
     <script src="../assets/js/mapbox.init.js"></script>
 
     <script src="../assets/demo/plugins-demo.js"></script>
+
+    <!-- Simple Map Enhancement Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Remove any loading indicators since we're using direct iframe
+        const loadingElement = document.getElementById("map-loading");
+        if (loadingElement) {
+          loadingElement.remove();
+        }
+
+        // Add hover effects to map action buttons
+        const mapActions = document.querySelectorAll(".map-actions a");
+
+        mapActions.forEach((action) => {
+          action.addEventListener("mouseenter", function () {
+            this.style.background = "rgba(102, 126, 234, 0.8)";
+            this.style.transform = "scale(1.05)";
+          });
+
+          action.addEventListener("mouseleave", function () {
+            this.style.background = "rgba(0, 0, 0, 0.8)";
+            this.style.transform = "scale(1)";
+          });
+        });
+
+        // Add map container hover effect
+        const mapContainer = document.querySelector(".map-container");
+        if (mapContainer) {
+          mapContainer.addEventListener("mouseenter", function () {
+            this.style.boxShadow = "0 12px 35px rgba(0, 0, 0, 0.4)";
+          });
+
+          mapContainer.addEventListener("mouseleave", function () {
+            this.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.3)";
+          });
+        }
+
+        // Animate overlay on page load
+        const mapOverlay = document.querySelector(".map-overlay");
+        if (mapOverlay) {
+          mapOverlay.style.opacity = "0";
+          mapOverlay.style.transform = "translateY(-20px)";
+
+          setTimeout(() => {
+            mapOverlay.style.transition = "all 0.6s ease";
+            mapOverlay.style.opacity = "1";
+            mapOverlay.style.transform = "translateY(0)";
+          }, 300);
+        }
+
+        console.log("Map loaded successfully with Google Maps embed");
+      });
+    </script>
+
+    <!-- Contact Form Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        const submitBtn = document.getElementById("submitBtn");
+        const submitIcon = document.getElementById("submitIcon");
+        const submitText = document.getElementById("submitText");
+
+        // Form validation function
+        function validateForm() {
+          const name = document.getElementById("nameContact").value.trim();
+          const email = document.getElementById("emailContact").value.trim();
+          const subject = document
+            .getElementById("subjectContact")
+            .value.trim();
+          const message = document
+            .getElementById("messageContact")
+            .value.trim();
+
+          if (!name) {
+            showNotification("لطفاً نام خود را وارد کنید", "error");
+            return false;
+          }
+
+          if (!email || !isValidEmail(email)) {
+            showNotification("لطفاً یک آدرس ایمیل معتبر وارد کنید", "error");
+            return false;
+          }
+
+          if (!subject) {
+            showNotification("لطفاً موضوع پیام را وارد کنید", "error");
+            return false;
+          }
+
+          if (!message) {
+            showNotification("لطفاً متن پیام را وارد کنید", "error");
+            return false;
+          }
+
+          return true;
+        }
+
+        // Email validation function
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        // Show notification function
+        function showNotification(message, type) {
+          // Remove existing notifications
+          const existingNotification = document.querySelector(".notification");
+          if (existingNotification) {
+            existingNotification.remove();
+          }
+
+          // Create notification element
+          const notification = document.createElement("div");
+          notification.className = `notification notification-${type}`;
+          notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${
+              type === "success"
+                ? "linear-gradient(135deg, #4CAF50, #45a049)"
+                : "linear-gradient(135deg, #f44336, #d32f2f)"
+            };
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            font-weight: 500;
+            max-width: 350px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+          `;
+          notification.textContent = message;
+
+          document.body.appendChild(notification);
+
+          // Animate in
+          setTimeout(() => {
+            notification.style.transform = "translateX(0)";
+          }, 100);
+
+          // Auto remove after 5 seconds
+          setTimeout(() => {
+            notification.style.transform = "translateX(100%)";
+            setTimeout(() => notification.remove(), 300);
+          }, 5000);
+        }
+
+        // Form submit handler
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!validateForm()) {
+            return;
+          }
+
+          // Change button state to loading
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = "0.8";
+          submitIcon.className = "fas fa-spinner fa-spin";
+          submitText.textContent = "در حال ارسال...";
+
+          // Simulate form submission (replace with actual form submission logic)
+          setTimeout(() => {
+            // Get form data
+            const formData = {
+              name: document.getElementById("nameContact").value.trim(),
+              email: document.getElementById("emailContact").value.trim(),
+              subject: document.getElementById("subjectContact").value.trim(),
+              message: document.getElementById("messageContact").value.trim(),
+            };
+
+            // Here you would normally send the data to your server
+            console.log("Form Data:", formData);
+
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = "1";
+            submitIcon.className = "fas fa-check";
+            submitText.textContent = "ارسال شد!";
+
+            // Show success message
+            showNotification(
+              "پیام شما با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.",
+              "success"
+            );
+
+            // Reset form
+            contactForm.reset();
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+              submitIcon.className = "fas fa-paper-plane";
+              submitText.textContent = "ارسال پیام";
+            }, 3000);
+          }, 2000); // Simulate 2 second delay
+        });
+
+        // Add hover effects to button
+        submitBtn.addEventListener("mouseenter", function () {
+          if (!this.disabled) {
+            this.style.transform = "translateY(-2px)";
+            this.style.boxShadow = "0 5px 15px rgba(102, 126, 234, 0.4)";
+          }
+        });
+
+        submitBtn.addEventListener("mouseleave", function () {
+          if (!this.disabled) {
+            this.style.transform = "translateY(0)";
+            this.style.boxShadow = "none";
+          }
+        });
+
+        // Add focus styles to form inputs
+        const formInputs = document.querySelectorAll(".form-control");
+        formInputs.forEach((input) => {
+          input.addEventListener("focus", function () {
+            this.style.borderColor = "#667eea";
+            this.style.boxShadow = "0 0 0 3px rgba(102, 126, 234, 0.1)";
+          });
+
+          input.addEventListener("blur", function () {
+            this.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            this.style.boxShadow = "none";
+          });
+        });
+      });
+    </script>
   </body>
 </html>
