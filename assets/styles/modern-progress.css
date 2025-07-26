@@ -6,7 +6,7 @@
   --warning-color: #ff9800;
   --info-color: #2196f3;
   --danger-color: #f44336;
-  --gradient-1: linear-gradient(135deg, #667eea 0%, #35ae11 100%);
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #0c9e04 100%);
   --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
@@ -38,7 +38,7 @@
   margin-bottom: 0.5rem;
   font-weight: 600;
   font-size: 1rem;
-  color: white;
+  color: #ed9900;
 }
 
 .modern-progress-label .skill-name {
